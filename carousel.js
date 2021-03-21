@@ -1,6 +1,7 @@
-!(function(d){
+!(function(doc){
+function carousel(d) {
   // Variables to target our base class,  get carousel items, count how many carousel items there are, set the slide to 0 (which is the number that tells us the frame we're on), and set motion to true which disables interactivity.
-  var itemClassName = "carousel__photo";
+  let itemClassName = "carousel__photo",
       items = d.getElementsByClassName(itemClassName),
       totalItems = items.length,
       slide = 0,
@@ -131,5 +132,9 @@
 
   // make it rain
   initCarousel();
-
+}
+  var carousels = doc.getElementsByClassName("carousel");
+  for (let i = 0; i < carousels.length; i++) {
+    carousel(carousels[i]);
+  }
 }(document));
